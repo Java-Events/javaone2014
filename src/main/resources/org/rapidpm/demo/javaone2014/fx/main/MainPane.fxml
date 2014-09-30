@@ -1,0 +1,17 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import org.rapidpm.demo.javaone2014.fx.main.edit.EditPane?>
+<fx:root type="org.rapidpm.demo.javaone2014.fx.main.MainPane"
+    fx:controller="org.rapidpm.demo.javaone2014.fx.main.MainPaneController"
+          xmlns:fx="http://javafx.com/fxml"
+    fx:id="mainPane" >
+
+  <!--style="-fx-scale-x: 4; -fx-scale-y: 4"-->
+  <VBox>
+    <Label fx:id="lb" text="Hello World"/>
+    <Button fx:id="btn" onAction="#onDoSomething" text="Main Button"/>
+    <EditPane fx:id="editPane"/>
+  </VBox>
+</fx:root>
+

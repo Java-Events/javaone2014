@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<AnchorPane id="demoView"
+            minHeight="180.0" prefHeight="192.0" prefWidth="525.0" styleClass="airpad"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.rapidpm.demo.javaone2014.afterburner.orig.presentation.demo.DemoPresenter">
+  <children>
+    <VBox>
+      <children>
+        <Label fx:id="messageA" prefHeight="39.0" prefWidth="347.0"
+               text="Service not used until now"/>
+
+        <Button fx:id="launch" layoutX="141.0" layoutY="134.0" mnemonicParsing="false" onAction="#launch"
+                text="Launch"/>
+
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

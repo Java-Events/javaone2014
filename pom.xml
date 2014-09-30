@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.rapidpm</groupId>
+    <artifactId>rapidpm-parent</artifactId>
+    <version>2.0.2-SNAPSHOT</version>
+  </parent>
+
+  <groupId>org.rapidpm.demo</groupId>
+  <artifactId>javaone2014</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
+
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.rapidpm</groupId>
+        <artifactId>rapidpm-dependicies</artifactId>
+        <version>2.0.2-SNAPSHOT</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.airhacks</groupId>
+      <artifactId>afterburner.fx</artifactId>
+      <version>1.6.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.testfx</groupId>
+      <artifactId>testfx-core</artifactId>
+      <version>4.0.0.SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.rapidpm.modul</groupId>
+      <artifactId>javafx-commons</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.rapidpm.modul</groupId>
+      <artifactId>cdi-commons</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.rapidpm.modul</groupId>
+      <artifactId>cdi-commons-se</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.rapidpm.modul</groupId>
+      <artifactId>cdi-commons-fx</artifactId>
+    </dependency>
+
+  </dependencies>
+
+
+
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>2.4</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>2.2.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.16</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-repository-plugin</artifactId>
+          <version>2.3.1</version>
+        </plugin>
+        <plugin>
+          <groupId>com.atlassian.maven.plugins</groupId>
+          <artifactId>maven-clover2-plugin</artifactId>
+          <version>3.2.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-gpg-plugin</artifactId>
+          <version>1.4</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <showDeprecation>true</showDeprecation>
+          <showWarnings>true</showWarnings>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>jar</goal>
+              <goal>test-jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>jar</goal>
+              <goal>test-jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <!--<dependencies>-->
+        <!--<dependency>-->
+        <!--<groupId>org.apache.maven.surefire</groupId>-->
+        <!--<artifactId>surefire-junit47</artifactId>-->
+        <!--<version>2.16</version>-->
+        <!--</dependency>-->
+        <!--</dependencies>-->
+        <configuration>
+          <forkMode>always</forkMode>
+          <!--<skipTests>true</skipTests>-->
+          <!--<forkCount>2.5C</forkCount>-->
+          <!--<forkCount>1</forkCount>-->
+          <!--<parallel>methods</parallel>-->
+          <!--<threadCount>10</threadCount>-->
+          <!--<reuseForks>false</reuseForks>-->
+          <!--<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>-->
+          <!--<argLine>-Xmx1024m</argLine>-->
+          <!--<forkMode>always</forkMode>-->
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-repository-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>com.atlassian.maven.plugins</groupId>
+        <artifactId>maven-clover2-plugin</artifactId>
+      </plugin>
+      <!--<plugin>-->
+      <!--<artifactId>kotlin-maven-plugin</artifactId>-->
+      <!--<groupId>org.jetbrains.kotlin</groupId>-->
+      <!--<version>0.6.602</version>-->
+
+      <!--<executions>-->
+      <!--<execution>-->
+      <!--<id>compile</id>-->
+      <!--<phase>process-sources</phase>-->
+      <!--<goals> <goal>compile</goal> </goals>-->
+      <!--</execution>-->
+
+      <!--<execution>-->
+      <!--<id>test-compile</id>-->
+      <!--<phase>process-test-sources</phase>-->
+      <!--<goals> <goal>test-compile</goal> </goals>-->
+      <!--</execution>-->
+      <!--</executions>-->
+      <!--</plugin>-->
+    </plugins>
+  </build>
+
+
+
+  <!--for development of features/develop branch-->
+  <distributionManagement>
+    <repository>
+      <id>releases</id>
+      <name>RapidPM Releases</name>
+      <url>http://nexus.rapidpm.org/nexus/content/repositories/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>RapidPM Snapshots</name>
+      <url>http://nexus.rapidpm.org/nexus/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+
+  <profiles>
+    <profile>
+      <id>junit</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <forkMode>always</forkMode>
+              <!--<includes>-->
+              <!--<include>**/junit/**</include>-->
+              <!--</includes>-->
+              <excludes>
+                <exclude>**/perf/**</exclude>
+              </excludes>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>arquillian_weld-se-embedded-11</id>
+      <dependencyManagement>
+        <dependencies>
+          <dependency>
+            <groupId>org.jboss.shrinkwrap.resolver</groupId>
+            <artifactId>shrinkwrap-resolver-bom</artifactId>
+            <version>2.1.0-alpha-1</version>
+            <scope>import</scope>
+            <type>pom</type>
+          </dependency>
+          <dependency>
+            <groupId>org.jboss.shrinkwrap</groupId>
+            <artifactId>shrinkwrap-depchain</artifactId>
+            <version>1.2.0</version>
+            <type>pom</type>
+            <scope>test</scope>
+          </dependency>
+          <dependency>
+            <groupId>org.jboss.arquillian</groupId>
+            <artifactId>arquillian-bom</artifactId>
+            <version>1.1.0.Final</version>
+            <scope>import</scope>
+            <type>pom</type>
+          </dependency>
+
+          <dependency>
+            <groupId>org.jboss.shrinkwrap.descriptors</groupId>
+            <artifactId>shrinkwrap-descriptors-bom</artifactId>
+            <version>2.0.0-alpha-5</version>
+            <scope>import</scope>
+            <type>pom</type>
+          </dependency>
+
+        </dependencies>
+      </dependencyManagement>
+      <dependencies>
+        <dependency>
+          <groupId>org.jboss.arquillian.container</groupId>
+          <artifactId>arquillian-weld-se-embedded-1.1</artifactId>
+          <version>1.0.0.CR7</version>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.jboss.weld</groupId>
+          <artifactId>weld-core</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>org.jboss.weld</groupId>
+          <artifactId>weld-api</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-simple</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>org.jboss.spec</groupId>
+          <artifactId>jboss-javaee-6.0</artifactId>
+          <version>1.0.0.Final</version>
+          <type>pom</type>
+          <scope>provided</scope>
+        </dependency>
+      </dependencies>
+
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <!--<includes>-->
+              <!--<include>**/junit/**</include>-->
+              <!--<include>**/cdi/**</include>-->
+              <!--</includes>-->
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+  </profiles>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>A business-friendly OSS license</comments>
+    </license>
+  </licenses>
+  <inceptionYear>2014</inceptionYear>
+  <organization>
+    <name>RapidPM</name>
+    <url>http://www.rapidpm.org</url>
+  </organization>
+</project>
